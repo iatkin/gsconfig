@@ -203,6 +203,12 @@ class ResourceInfo(object):
         builder.end(self.resource_type)
         msg = tostring(builder.close())
         return msg
+    
+    def __repr__(self):
+        if self.name and self.href:
+            return "%s @ %s" % (self.name, self.href)
+        else:
+            return super(ResourceInfo, self).__repr__()
 
 def prepare_upload_bundle(name, data):
     """GeoServer's REST API uses ZIP archives as containers for file formats such
