@@ -42,6 +42,3 @@ class Workspace(ResourceInfo):
     writers = dict(
         enabled = write_bool("enabled")
     )
-
-    def __repr__(self):
-        return "%s @ %s" % (self.name, self.href)
